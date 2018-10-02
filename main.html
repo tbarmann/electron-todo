@@ -17,6 +17,9 @@
       li.appendChild(text);
       ul.appendChild(li);
     });
+    ipcRenderer.on('todo:clear', () => {
+      ul.innerHTML='';
+    });
 
   </script>
 
