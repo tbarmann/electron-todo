@@ -9,7 +9,11 @@ let addWindow;
 app.on('ready', () => {
   mainWindow = new BrowserWindow({});
   mainWindow.loadURL(`file://${__dirname}/main.html`);
+  // when main window is closed, quit the app so no child windows
+  // remain open
+  mainWindow.on('closed', () => app.quit());
   const mainMenu = Menu.buildFromTemplate(menuTemplate);
+
   Menu.setApplicationMenu(mainMenu);
 });
 
