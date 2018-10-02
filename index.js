@@ -19,6 +19,7 @@ function createAddWindow() {
     width: 300,
     title: 'Add Todo'
   });
+  addWindow.loadURL(`file://${__dirname}/add.html`);
 }
 
 const menuTemplate = [
