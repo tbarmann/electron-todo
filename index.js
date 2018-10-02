@@ -52,3 +52,19 @@ const menuTemplate = [
 if (isIOS) {
   menuTemplate.unshift({});
 }
+
+// production, development or staging
+if (process.env.NODE_ENV !== 'production') {
+  menuTemplate.push({
+    label: 'Developer',
+    submenu: [
+      {
+        label: 'Toggle Developer Tools',
+        accelerator: isIOS ? 'Command+Alt+I' : 'Ctrl+Shift+I',
+        click(item, focusedWindow) {
+          focusedWindow.toggleDevTools();
+        }
+      }
+    ]
+  });
+}
