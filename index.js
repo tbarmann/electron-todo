@@ -24,6 +24,8 @@ function createAddWindow() {
     title: 'Add Todo'
   });
   addWindow.loadURL(`file://${__dirname}/add.html`);
+  // make sure memory is reclaimed after window is closed
+  addWindow.on('closed', () => addWindow = null);
 }
 
 const menuTemplate = [
