@@ -58,6 +58,7 @@ if (process.env.NODE_ENV !== 'production') {
   menuTemplate.push({
     label: 'Developer',
     submenu: [
+      {role: 'reload'},
       {
         label: 'Toggle Developer Tools',
         accelerator: isIOS ? 'Command+Alt+I' : 'Ctrl+Shift+I',
