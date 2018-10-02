@@ -14,13 +14,11 @@ app.on('ready', () => {
 });
 
 function createAddWindow() {
-  addWindow = new BrowserWindow(
-    {
-      height: 200,
-      width: 300,
-      title: 'Add Todo'
-    }
-  );
+  addWindow = new BrowserWindow({
+    height: 200,
+    width: 300,
+    title: 'Add Todo'
+  });
 }
 
 const menuTemplate = [
