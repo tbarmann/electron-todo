@@ -28,6 +28,11 @@ function createAddWindow() {
   addWindow.on('closed', () => addWindow = null);
 }
 
+ipcMain.on('todo:add', (event, todo) => {
+  mainWindow.webContents.send('todo:add', todo);
+  addWindow.close();
+});
+
 const menuTemplate = [
   {
     label: 'File',
